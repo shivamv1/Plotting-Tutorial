@@ -1,0 +1,14 @@
+f(x) =  exp(-x**2 / 2)
+g(x) =  x**2/16
+set xlabel "x"
+set ylabel "f(x)/g(x)"
+set title "Gaussian Vs Parabola"
+set term png size 720,580
+set output "mev.png"
+plot[t=-4:4] f(t) title "Gaussian Curve", g(t) title "Parabola"
+set term qt
+#
+# run this script using the command 
+# gnuplot mev.gpl
+#
+#

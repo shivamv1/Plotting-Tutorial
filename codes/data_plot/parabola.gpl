@@ -1,0 +1,11 @@
+set title "Parabola Plot"
+set xlabel "x"
+set ylabel 'x^{2}/16'
+set xrange[-10:10]
+set xtics 2
+set border lw 2
+set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 pi -1 ps 1
+set term png size 800,600
+set output "parabola.png"
+plot "parabola.dat" using 1:2 title 'x^{2}/16' w lp ls 1
+set term qt

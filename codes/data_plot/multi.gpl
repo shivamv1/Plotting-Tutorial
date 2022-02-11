@@ -1,0 +1,24 @@
+set term png size 800,600
+set output "multi.png"
+set multi layout 2,2 title 'All plots'
+set xlabel "x"
+set ylabel 'x^{2}/16'
+set xtics 2
+set border lw 2
+set style line 1 lc rgb 'red' lt 1 lw 2 pt 7 pi -1 ps 1
+plot "parabola.dat" using 1:2 title 'x^{2}/16' w lp ls 1
+set ylabel 'sin(x)'
+set yrange[-1.5:1.5]
+set xtics 2
+set border lw 2
+set style line 2 lc rgb 'blue' lt 1 lw 2 pt 7 pi -1 ps 1
+plot "sin.dat" using 1:2 title 'sin(x)' w lp ls 2
+set ylabel 'exp(x)'
+unset yrange
+set xtics 2
+set border lw 2
+set style line 3 lc rgb 'green' lt 1 lw 2 pt 7 pi -1 ps 1
+plot "exp.dat" using 1:2 title 'exp(x)' w lp ls 3
+unset multi
+set term qt
+unset multi

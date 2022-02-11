@@ -1,0 +1,19 @@
+set terminal epslatex size 3.5,2.62 color colortext
+set output 'mev_tex.tex'
+f(x) =  exp(-x**2 / 2)
+g(x) =  x**2/16
+set xlabel '$x$'
+set ylabel '$f(x)/g(x)$'
+set title "Gaussian Vs Parabola"
+plot[t=-4:4] f(t) title '$\textrm{Gaussian Curve}$', g(t) title '\textrm{Parabola}'
+#
+#
+# after running the command "gnuplot mev_tex.gpl" gnuplot will create a tex file 
+# now, to use that output in your tex document 
+# just enclose it within figure environment like
+#
+#\begin{figure}
+#	\input{mev_tex}
+#\end{figure}
+#
+#
